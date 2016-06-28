@@ -1,22 +1,22 @@
-import React, { PropTypes } from 'react';
+import React, { Component } from 'react'
 
-const propTypes = {};
+class Foo extends Component {
 
-const defaultProps = {};
-
-class Foo extends React.Component {
-  constructor(props) {
-    super(props);
+  /**
+   * @returns {string}
+   */
+  shouldReturnBar() {
+    return 'bar'
   }
 
+  /**
+   * @returns {XML}
+   */
   render() {
     return (
-      <div className="foo" />
-    );
+      <div className='foo' />
+    )
   }
 }
 
-Foo.propTypes = propTypes;
-Foo.defaultProps = defaultProps;
-
-export default Foo;
+export default Foo

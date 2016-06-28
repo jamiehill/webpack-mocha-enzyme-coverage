@@ -1,22 +1,22 @@
-var path = require('path');
+import path from 'path';
 
-module.exports = function(config) {
+module.exports = (config) => {
   config.set({
     basePath: '',
     frameworks: ['mocha'],
     reporters: ['mocha', 'coverage'],
     files: [
-      './test/test.bundle.js'
+      './test/test.bundle.js',
     ],
 
     preprocessors: {
       // add webpack as preprocessor
-      'src/**/*.js': ['webpack', 'sourcemap'],
-      'test/**/*.js': ['webpack', 'sourcemap']
+      'src/**/*.js': ['webpack', 'sourcemap', 'coverage'],
+      'test/**/*.js': ['webpack', 'sourcemap'],
     },
 
-    webpack: { //kind of a copy of your webpack config
-      devtool: 'inline-source-map', //just do inline source maps instead of the default
+    webpack: { // kind of a copy of your webpack config
+      devtool: 'inline-source-map', // just do inline source maps instead of the default
       module: {
         loaders: [
           {
@@ -24,31 +24,31 @@ module.exports = function(config) {
             loader: 'babel',
             exclude: path.resolve(__dirname, 'node_modules'),
             query: {
-              presets: ['airbnb']
-            }
+              presets: ['airbnb'],
+            },
           },
           {
             test: /\.json$/,
             loader: 'json',
           },
-        ]
+        ],
       },
       externals: {
         'react/lib/ExecutionEnvironment': true,
-        'react/lib/ReactContext': true
-      }
+        'react/lib/ReactContext': true,
+      },
     },
 
     webpackServer: {
-      noInfo: true //please don't spam the console when running in karma!
+      noInfo: true, // please don't spam the console when running in karma!
     },
 
     coverageReporter: {
       reporters: [
         { type: 'lcov', dir: 'coverage', subdir: '.' },
-        { type: 'text-summary' }
+        { type: 'text-summary' },
       ],
-      includeAllSources: true
+      includeAllSources: true,
     },
 
     plugins: [
@@ -58,20 +58,20 @@ module.exports = function(config) {
       'karma-coverage',
       'karma-sourcemap-loader',
       'karma-chrome-launcher',
-      'karma-phantomjs-launcher'
+      'karma-phantomjs-launcher',
     ],
 
     babelPreprocessor: {
       options: {
-        presets: ['airbnb']
-      }
+        presets: ['airbnb'],
+      },
     },
 
     client: {
       mocha: {
         reporter: 'html',
-        ui: 'bdd'
-      }
+        ui: 'bdd',
+      },
     },
 
     port: 9876,
