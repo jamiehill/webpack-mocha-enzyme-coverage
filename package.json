@@ -46,12 +46,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lelandrichardson/enzyme-example-karma-webpack.git"
+    "url": "git+https://github.com/jamiehill/webpack-mocha-enzyme-coverage.git"
   },
   "author": "James Hill <jamie@tiltdigital.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lelandrichardson/enzyme-example-karma-webpack/issues"
+    "url": "https://github.com/jamiehill/webpack-mocha-enzyme-coverage/issues"
   },
-  "homepage": "https://github.com/lelandrichardson/enzyme-example-karma-webpack#readme"
+  "homepage": "https://github.com/jamiehill/webpack-mocha-enzyme-coverage#readme"
 }
