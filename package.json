@@ -13,7 +13,7 @@
     "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
     "test:watch": "./node_modules/karma/bin/karma start"
   },
-  "homepage": "https://github.com/jamiehill/webpack-mocha-enzyme-coverage#readme"
+  "homepage": "https://github.com/jamiehill/webpack-mocha-enzyme-coverage#readme",
   "dependencies": {
     "chai-enzyme": "^0.5.0",
     "dirty-chai": "^1.2.2",
