@@ -9,4 +9,5 @@ Webpack 2 testing setup. Uses:
 4. Enzyme
 5. Chai 
 6. Sinon
+7. Instanbul 
 
