@@ -1,4 +1,4 @@
-Webpack-Mocha-Enzyme-Coverage
+Webpack2-Mocha-Enzyme-Coverage
 ====
 
 Webpack 2 testing setup. Uses:
