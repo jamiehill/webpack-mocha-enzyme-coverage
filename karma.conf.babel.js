@@ -20,7 +20,7 @@ module.exports = (config) => {
     },
 
     webpack: {
-      entry: ['./src/Foo.js'],
+      entry: ['./src/Fixture.js'],
       devtool: 'cheap-module-source-map',
       module: {
         rules: [
@@ -49,14 +49,6 @@ module.exports = (config) => {
       ],
       includeAllSources: false
     },
-
-    plugins: [
-      'karma-mocha',
-      'karma-webpack-with-fast-source-maps',
-      'karma-chrome-launcher',
-      'karma-mocha-reporter',
-      'karma-coverage'
-    ],
 
     client: {
       mocha: {

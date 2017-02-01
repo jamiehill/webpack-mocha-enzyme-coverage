@@ -25,7 +25,7 @@ mocha.setup({
 // Chai
 //
 global.expect = chai.expect
-chai.should()
 chai.use(chaiEnzyme())
 chai.use(dirtyChai)
 chai.use(sinonChai)
+chai.should()
