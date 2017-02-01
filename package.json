@@ -1,22 +1,17 @@
 {
-  "name": "webpack-mocha-enzyme-coverage",
+  "name": "webpack2-mocha-enzyme-coverage",
   "version": "0.1.4",
   "description": "",
-  "main": "build/index.js",
   "author": "James Hill <jamie@tiltdigital.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jamiehill/webpack-mocha-enzyme-coverage.git"
+    "url": "git+https://github.com/jamiehill/webpack2-mocha-enzyme-coverage.git"
   },
   "scripts": {
-    "lint": "eslint ./src",
-    "lint:fix": "npm run lint -- --fix",
-    "lint:watch": "watch 'npm run lint --silent' src test",
-    "test": "NODE_ENV=test $(npm bin)/karma start karma.conf.babel.js",
-    "test:watch": "./node_modules/karma/bin/karma start"
+    "test": "NODE_ENV=test $(npm bin)/karma start karma.conf.babel.js"
   },
-  "homepage": "https://github.com/jamiehill/webpack-mocha-enzyme-coverage#readme",
+  "homepage": "https://github.com/jamiehill/webpack2-mocha-enzyme-coverage#readme",
   "devDependencies": {
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
