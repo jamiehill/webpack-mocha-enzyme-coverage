@@ -10,11 +10,22 @@ class Foo extends Component {
   }
 
   /**
+   * @returns {string}
+   */
+  shouldReturnJamie() {
+    return 'jamie'
+  }
+
+  jamie() {
+    return 10 * 2
+  }
+
+  /**
    * @returns {XML}
    */
   render() {
     return (
-      <div className='foo' />
+      <div className={this.props.className} />
     )
   }
 }

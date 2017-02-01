@@ -1,11 +1,21 @@
-// setup
-const setupContext = require.context('./', true, /setup\.js$/)
-setupContext.keys().forEach(setupContext)
+import './setup'
 
-// tests
-const testsContext = require.context('./', true, /-test\.js$/)
-testsContext.keys().forEach(testsContext)
+// This gets replaced by karma webpack with the updated files on rebuild
+var __karmaWebpackManifest__ = [];
 
-// src
-const srcContext = require.context('../src', true, /\.*$/)
-srcContext.keys().forEach(srcContext)
+// require all modules ending in "_test" from the
+// current directory and all subdirectories
+var testsContext = require.context('../src', true, /-test\.js$/);
+
+function inManifest(path) {
+    return __karmaWebpackManifest__.indexOf(path) >= 0;
+}
+
+var runnable = testsContext.keys().filter(inManifest);
+
+// Run all tests if we didn't find any changes
+if (!runnable.length) {
+    runnable = testsContext.keys();
+}
+
+runnable.forEach(testsContext);
