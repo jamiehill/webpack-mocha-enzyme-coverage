@@ -16,4 +16,8 @@ describe('A suite', () => {
     const foo = new Foo()
     foo.shouldReturnJamie().should.equal('jamie')
   })
+  it('should have 100% coverage', () => {
+    const foo = new Foo()
+    foo.jamie().should.equal(20)
+  })
 });

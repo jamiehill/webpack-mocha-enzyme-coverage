@@ -16,11 +16,12 @@ module.exports = (config) => {
 
     preprocessors: {
       'src/**/*.js': ['webpack', 'coverage'],
-      'test/**/*.js': ['webpack'],
+      './test/test.bundle.js': ['webpack']
     },
 
-    webpack: { // kind of a copy of your webpack config
-      devtool: 'cheap-module-source-map', // just do inline source maps instead of the default
+    webpack: {
+      entry: ['./src/Foo.js'],
+      devtool: 'cheap-module-source-map',
       module: {
         rules: [
           {
@@ -30,9 +31,9 @@ module.exports = (config) => {
         ]
       },
       externals: [
-          'react/addons',
-          'react/lib/ExecutionEnvironment',
-          'react/lib/ReactContext'
+        'react/addons',
+        'react/lib/ExecutionEnvironment',
+        'react/lib/ReactContext'
       ]
     },
 
@@ -46,18 +47,15 @@ module.exports = (config) => {
         { type: 'lcov', dir: 'coverage', subdir: '.' },
         { type: 'text' }
       ],
-      includeAllSources: true
+      includeAllSources: false
     },
 
     plugins: [
-      'karma-webpack',
       'karma-mocha',
-      'karma-mocha-reporter',
-      'karma-coverage',
-      'karma-sourcemap-loader',
+      'karma-webpack-with-fast-source-maps',
       'karma-chrome-launcher',
-      'karma-phantomjs-launcher',
-      'karma-clear-screen-reporter'
+      'karma-mocha-reporter',
+      'karma-coverage'
     ],
 
     client: {
