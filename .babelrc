@@ -3,7 +3,7 @@
     "latest", "react"
   ],
   "env": {
-    "test": {
+    "testtttt": {
       "plugins": [ "istanbul" ]
     }
   }

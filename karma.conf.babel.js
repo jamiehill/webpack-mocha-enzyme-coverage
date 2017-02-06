@@ -21,12 +21,14 @@ module.exports = (config) => {
 
     webpack: {
       entry: ['./src/Fixture.js'],
-      devtool: 'cheap-module-source-map',
+      // sourcemaps only seem to work when set
+      // as 'inline-source-map' when using Istanbul
+      devtool: 'inline-source-map',
       module: {
         rules: [
           {
             test: /\.js$/,
-            loader: `babel-loader`
+            loader: 'babel-loader'
           }
         ]
       },
